@@ -1,0 +1,23 @@
+{
+  "animes": [
+    {
+      "id": 21,
+      "title": "demon slayer",
+      "genre": "shounen",
+      "image": "/uploads/image-1721596024588-996746237.png"
+    },
+    {
+      "id": 2,
+      "title": "goku negro",
+      "genre": "shounen",
+      "image": "/uploads/image-1721596730030-178835373.jpg"
+    },
+    {
+      "id": 3,
+      "title": "goku negro",
+      "genre": "shounen",
+      "image": "/uploads/image-1721597414198-431667526.jpg"
+    }
+  ],
+  "studios": []
+}

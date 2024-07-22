@@ -1,0 +1,152 @@
+{
+  "animes": [
+    {
+      "id": 1,
+      "title": "One piece",
+      "genre": "Shounen",
+      "studioId": 1
+    },
+    {
+      "id": 2,
+      "title": "Dragon Ball Super",
+      "genre": "Shounen",
+      "studioId": 1
+    },
+    {
+      "id": 3,
+      "title": "Sailor Moon",
+      "genre": "Magical Girl",
+      "studioId": 1
+    },
+    {
+      "id": 4,
+      "title": "Digimon Adventure",
+      "genre": "Adventure",
+      "studioId": 1
+    },
+    {
+      "id": 5,
+      "title": "Saint Seiya",
+      "genre": "Action",
+      "studioId": 1
+    },
+    {
+      "id": 6,
+      "title": "My Neighbor Totoro",
+      "genre": "Fantasy",
+      "studioId": 2
+    },
+    {
+      "id": 7,
+      "title": "Spirited Away",
+      "genre": "Fantasy",
+      "studioId": 2
+    },
+    {
+      "id": 8,
+      "title": "Princess Mononoke",
+      "genre": "Fantasy",
+      "studioId": 2
+    },
+    {
+      "id": 9,
+      "title": "Howl's Moving Castle",
+      "genre": "Fantasy",
+      "studioId": 2
+    },
+    {
+      "id": 10,
+      "title": "Kiki's Delivery Service",
+      "genre": "Fantasy",
+      "studioId": 2
+    },
+    {
+      "id": 11,
+      "title": "Death Note",
+      "genre": "Psychological Thriller",
+      "studioId": 3
+    },
+    {
+      "id": 12,
+      "title": "Hunter x Hunter",
+      "genre": "Adventure",
+      "studioId": 3
+    },
+    {
+      "id": 13,
+      "title": "One Punch Man",
+      "genre": "Action",
+      "studioId": 3
+    },
+    {
+      "id": 14,
+      "title": "Black Lagoon",
+      "genre": "Action",
+      "studioId": 3
+    },
+    {
+      "id": 15,
+      "title": "Cardcaptor Sakura",
+      "genre": "Magical Girl",
+      "studioId": 3
+    },
+    {
+      "id": 16,
+      "title": "Fullmetal Alchemist: Brotherhood",
+      "genre": "Adventure",
+      "studioId": 4
+    },
+    {
+      "id": 17,
+      "title": "My Hero Academia",
+      "genre": "Superhero",
+      "studioId": 4
+    },
+    {
+      "id": 18,
+      "title": "Mob Psycho 100",
+      "genre": "Supernatural",
+      "studioId": 4
+    },
+    {
+      "id": 19,
+      "title": "Soul Eater",
+      "genre": "Action",
+      "studioId": 4
+    },
+    {
+      "id": 20,
+      "title": "Kekkai Sensen",
+      "genre": "Action",
+      "studioId": 4
+    },
+    {
+      "id": 21,
+      "title": "demon slayer",
+      "genre": "shounen",
+      "image": "/uploads/image-1721596024588-996746237.png"
+    }
+  ],
+  "studios": [
+    {
+      "id": 1,
+      "name": "Toei Animation",
+      "description": "its a good studio"
+    },
+    {
+      "id": 2,
+      "name": "Studio Ghibli",
+      "description": "A renowned Japanese animation studio known for its beautiful and imaginative films."
+    },
+    {
+      "id": 3,
+      "name": "Madhouse",
+      "description": "A Japanese animation studio known for its diverse range of high-quality and innovative anime series and films."
+    },
+    {
+      "id": 4,
+      "name": "Bones",
+      "description": "A Japanese animation studio known for its vibrant animation style and successful anime series."
+    }
+  ]
+}
