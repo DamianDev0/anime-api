@@ -1,11 +1,65 @@
 {
   "animes": [
     {
-      "id": 1,
-      "title": "black",
-      "genre": "pripra",
+      "id": 2,
+      "title": "Castle in the Sky",
+      "genre": "Adventure",
       "studioId": 2,
-      "image": "/uploads/Captura de pantalla 2024-07-15 105425.png",
+      "image": "/uploads/castle in the sky poster.jpg",
+      "studioName": "Studio Ghibli",
+      "studioDescription": "A renowned Japanese animation studio known for its beautiful and imaginative films."
+    },
+    {
+      "id": 2,
+      "title": "y Neighbor Totoro",
+      "genre": "Fantasy",
+      "studioId": 2,
+      "image": "/uploads/totoro poster.jpg",
+      "studioName": "Studio Ghibli",
+      "studioDescription": "A renowned Japanese animation studio known for its beautiful and imaginative films."
+    },
+    {
+      "id": 3,
+      "title": "Kiki's Delivery Service",
+      "genre": "Fantasy",
+      "studioId": 2,
+      "image": "/uploads/poster kiki.jpg",
+      "studioName": "Studio Ghibli",
+      "studioDescription": "A renowned Japanese animation studio known for its beautiful and imaginative films."
+    },
+    {
+      "id": 4,
+      "title": "Spirited Away",
+      "genre": "Fantasy",
+      "studioId": 2,
+      "image": "/uploads/spired away poster.jpg",
+      "studioName": "Studio Ghibli",
+      "studioDescription": "A renowned Japanese animation studio known for its beautiful and imaginative films."
+    },
+    {
+      "id": 5,
+      "title": "Howl's Moving Castle",
+      "genre": "Fantasy",
+      "studioId": 2,
+      "image": "/uploads/poster castle.jpg",
+      "studioName": "Studio Ghibli",
+      "studioDescription": "A renowned Japanese animation studio known for its beautiful and imaginative films."
+    },
+    {
+      "id": 6,
+      "title": "Porco Rosso",
+      "genre": "Adventure\n",
+      "studioId": 2,
+      "image": "/uploads/porcorosoposter.jpg",
+      "studioName": "Studio Ghibli",
+      "studioDescription": "A renowned Japanese animation studio known for its beautiful and imaginative films."
+    },
+    {
+      "id": 7,
+      "title": "Grave of the Fireflies",
+      "genre": "Drama\n",
+      "studioId": 2,
+      "image": "/uploads/grave poster.jpg",
       "studioName": "Studio Ghibli",
       "studioDescription": "A renowned Japanese animation studio known for its beautiful and imaginative films."
     }
