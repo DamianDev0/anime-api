@@ -4,7 +4,6 @@ import { fileURLToPath } from 'url';
 import path from 'path';
 import multer from 'multer';
 
-// Definir __dirname en ES Module
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -16,8 +15,7 @@ const storage = multer.diskStorage({
         cb(null, path.join(__dirname, '..', '..', 'public', 'uploads')); // Guardar en 'public/uploads'
     },
     filename: (req, file, cb) => {
-        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-        cb(null, file.fieldname + '-' + uniqueSuffix + path.extname(file.originalname));
+        cb(null, file.originalname);
     }
 });
 const upload = multer({ storage });
@@ -59,11 +57,15 @@ animesRouter.post('/', upload.single('image'), async (req, res) => {
             genre: req.body.genre,
             studioId: studioId,
             description: req.body.description,
-            image: req.file ? `/uploads/${path.basename(req.file.path)}` : null
+            image: req.file ? `/uploads/${path.basename(req.file.path)}` : null,
+            studioName : findStudio.name,
+            studioDescription : findStudio.description
         };
 
         data.animes.push(newAnime);
         await writeAnimes(data);
+
+
         res.status(201).json({ message: 'Anime created successfully', anime: newAnime });
     } catch (err) {
         res.status(500).json({ message: 'Internal Server Error' });
@@ -123,4 +125,23 @@ animesRouter.get('/:id', async (req, res) => {
     }
 });
 
+animesRouter.delete('/:id', async (req, res) => {
+    try {
+
+        const data = await readAnimes()
+
+        const animeIndex = data.animes.findIndex(anime => anime.id === parseInt(req.params.id, 10));
+        if (animeIndex === -1) {
+            return res.status(404).json({ message: 'Anime not found' });
+        }
+
+        data.animes.splice(animeIndex, 1);
+        await writeAnimes(data);
+
+        res.json({message: 'anime delete succesfully'})
+    }
+    catch (err){
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+})
 export default animesRouter;
