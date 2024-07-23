@@ -5,7 +5,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import fs from 'fs';
 import errorHandler from './middlewares/errorHandler.js';
-import routerAnimes from './routes/anime-route.js';
+import animesRouter from './routes/anime-route.js';
 import studiosRouter from './routes/studios-route.js';
 
 dotenv.config();
@@ -16,10 +16,11 @@ const PORT = process.env.PORT || 4000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Crear el directorio 'public/uploads' si no existe
+// Crear el directorio 'public/uploads' si no existe en la raíz del proyecto
 const uploadDir = path.join(__dirname, '..', 'public', 'uploads');
 if (!fs.existsSync(uploadDir)) {
     fs.mkdirSync(uploadDir, { recursive: true });
+    console.log('Directory created:', uploadDir);
 }
 
 app.use(express.json());
@@ -29,7 +30,7 @@ app.use(cors());
 app.use('/uploads', express.static(path.join(__dirname, '..', 'public', 'uploads')));
 
 // Usar rutas de animes
-app.use('/animes', routerAnimes);
+app.use('/animes', animesRouter);
 app.use('/studios', studiosRouter);
 
 app.use(errorHandler);

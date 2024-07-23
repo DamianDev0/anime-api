@@ -1,23 +1,33 @@
 {
   "animes": [
     {
-      "id": 21,
-      "title": "demon slayer",
-      "genre": "shounen",
-      "image": "/uploads/image-1721596024588-996746237.png"
+      "id": 1,
+      "title": "black",
+      "genre": "pripra",
+      "studioId": 2,
+      "image": "/uploads/image-1721710572737-842656375.png"
+    }
+  ],
+  "studios": [
+    {
+      "id": 1,
+      "name": "Toei Animation",
+      "description": "its a good studio"
     },
     {
       "id": 2,
-      "title": "goku negro",
-      "genre": "shounen",
-      "image": "/uploads/image-1721596730030-178835373.jpg"
+      "name": "Studio Ghibli",
+      "description": "A renowned Japanese animation studio known for its beautiful and imaginative films."
     },
     {
       "id": 3,
-      "title": "goku negro",
-      "genre": "shounen",
-      "image": "/uploads/image-1721597414198-431667526.jpg"
+      "name": "Madhouse",
+      "description": "A Japanese animation studio known for its diverse range of high-quality and innovative anime series and films."
+    },
+    {
+      "id": 4,
+      "name": "Bones",
+      "description": "A Japanese animation studio known for its vibrant animation style and successful anime series."
     }
-  ],
-  "studios": []
+  ]
 }

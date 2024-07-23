@@ -13,7 +13,7 @@ const animesFilePath = path.join(__dirname, '../../server/data.json');
 // Configuración de multer para almacenar archivos en 'public/uploads'
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, path.join(__dirname, '..', 'public', 'uploads')); // Guardar en 'public/uploads'
+        cb(null, path.join(__dirname, '..', '..', 'public', 'uploads')); // Guardar en 'public/uploads'
     },
     filename: (req, file, cb) => {
         const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
@@ -30,7 +30,7 @@ const readAnimes = async () => {
         return JSON.parse(animes);
     } catch (err) {
         console.error('Error reading animes:', err);
-        throw err; // Lanzar el error para manejarlo en el middleware de error
+        throw err; 
     }
 };
 
@@ -39,22 +39,27 @@ const writeAnimes = async (animes) => {
         await fs.writeFile(animesFilePath, JSON.stringify(animes, null, 2), 'utf8');
     } catch (err) {
         console.error('Error writing animes:', err);
-        throw err; // Lanzar el error para manejarlo en el middleware de error
+        throw err; 
     }
 };
 
-// Ruta para crear un nuevo anime con archivo opcional
 animesRouter.post('/', upload.single('image'), async (req, res) => {
     try {
         const data = await readAnimes();
-        if (!data.animes) data.animes = []; // Asegúrate de que `data.animes` exista
+        const studioId = parseInt(req.body.studioId, 10); 
+        const findStudio = data.studios.find(studio => studio.id === studioId);
+
+        if (!findStudio) {
+            return res.status(404).json({ message: 'Studio not found' });
+        }
 
         const newAnime = {
             id: data.animes.length + 1,
             title: req.body.title,
             genre: req.body.genre,
+            studioId: studioId,
             description: req.body.description,
-            image: req.file ? `/uploads/${path.basename(req.file.path)}` : null // Guardar la ruta del archivo si se ha subido
+            image: req.file ? `/uploads/${path.basename(req.file.path)}` : null
         };
 
         data.animes.push(newAnime);
@@ -64,7 +69,6 @@ animesRouter.post('/', upload.single('image'), async (req, res) => {
         res.status(500).json({ message: 'Internal Server Error' });
     }
 });
-
 // Ruta para actualizar un anime con archivo opcional
 animesRouter.put('/:id', upload.single('image'), async (req, res) => {
     try {

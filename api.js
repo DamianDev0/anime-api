@@ -11,20 +11,16 @@ async function apiUsers() {
             $animeContainer.innerHTML = /*html*/`
             <div class="flex flex-col">
                 <h1>${anime.title}</h1>
-                <strong>Genre:${anime.genre}</strong>
-                <strong>Studio:${anime.studioName}</strong>
-                <img src=${anime.image} alt=${anime.title}>
+                <strong>Genre: ${anime.genre}</strong>
+                <strong>Studio: ${anime.studioId}</strong>
+                <img src="http://localhost:3000${anime.image}" alt="${anime.title}">
             </div>
-          
-
-
-            `;
+           `;
             $container.appendChild($animeContainer);
         });
     } catch (error) {
-        console.error("An error occurred while fetching users from the API", error);
+        console.error("An error occurred while fetching animes from the API", error);
     }
 }
 
 apiUsers();
-//
